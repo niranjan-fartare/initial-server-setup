@@ -16,7 +16,7 @@ sudo echo "</Directory>" | sudo tee -a /etc/apache2/apache.conf;
 
 sudo apt install curl;
 
-sudo cd /tmp;
+cd /tmp;
 sudo curl -O https://wordpress.org/latest.tar.gz;
 
 sudo tar xzvf latest.tar.gz;
