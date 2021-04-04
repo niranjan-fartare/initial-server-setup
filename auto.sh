@@ -12,10 +12,10 @@ sudo apt install apache2 php unzip -y;
 sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip php-mysql -y;
 
 sudo service apache2 restart;
-
-sudo echo "<Directory /var/www/html/>" | sudo tee -a /etc/apache2/apache.conf;
-sudo echo "    AllowOverride All" | sudo tee -a /etc/apache2/apache.conf;
-sudo echo "</Directory>" | sudo tee -a /etc/apache2/apache.conf;
+sudo cp /etc/apache2/apache2.conf apache2.conf.bak
+sudo echo "<Directory /var/www/html/>" | sudo tee -a /etc/apache2/apache2.conf;
+sudo echo "    AllowOverride All" | sudo tee -a /etc/apache2/apache2.conf;
+sudo echo "</Directory>" | sudo tee -a /etc/apache2/apache2.conf;
 
 sudo apt install curl;
 
@@ -28,7 +28,7 @@ sudo cp /tmp/wordpress/wp-config-sample.php /tmp/wordpress/wp-config.php;
 sudo mkdir /tmp/wordpress/wp-content/upgrade;
 
 sudo cp -a /tmp/wordpress/. /var/www/html;
-sudo rm /var/www/html/index.html
+sudo rm /var/www/html/index.html;
 sudo chown -R www-data:www-data /var/www/html;
 
 sudo find /var/www/html/ -type d -exec chmod 750 {} \; ;
