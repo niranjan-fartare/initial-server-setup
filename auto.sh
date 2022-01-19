@@ -6,7 +6,7 @@ sudo apt autoremove;
 
 sudo apt clean;
 
-sudo apt install apache2 php unzip -y;
+sudo apt install apache2 php mysql-server unzip -y;
 
 
 sudo apt install php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip php-mysql -y;
